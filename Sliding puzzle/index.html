@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PIXEL SLIDER 9000</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="landing">
+    <div id="landing-bg"></div>
+    <div class="pixel-rain" id="pixelRain"></div>
+
+    <div class="landing-title">
+      <span class="title-main">PIXEL SLIDER</span>
+      <div class="title-sub">⬛ 9000 ⬛</div>
+    </div>
+
+    <div class="pixel-logo" id="pixelLogo"></div>
+
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-label">HI-SCORE</div>
+        <div id="hiScore">000000</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">GAMES</div>
+        <div id="gamesPlayed">000</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">BEST TIME</div>
+        <div id="bestTime">--:--</div>
+      </div>
+    </div>
+
+    <div class="difficulty-section">
+      <div class="section-title">&gt;&gt; SELECT DIFFICULTY &lt;&lt;</div>
+      <div class="diff-buttons">
+        <button class="diff-btn easy selected" onclick="selectDiff(3, this)">
+          3×3<br><br>EASY
+        </button>
+        <button class="diff-btn medium" onclick="selectDiff(4, this)">
+          4×4<br><br>MEDIUM
+        </button>
+        <button class="diff-btn hard" onclick="selectDiff(5, this)">
+          5×5<br><br>HARD
+        </button>
+      </div>
+    </div>
+
+    <button class="start-btn" onclick="startGame()">START</button>
+
+    <div class="insert-coin">— PRESS START —</div>
+
+    <div class="howto">
+      [↑↓←→] OR [CLICK] TO MOVE TILES<br>
+      ARRANGE 1 TO N IN ORDER<br>
+      EMPTY SPACE = BOTTOM RIGHT
+    </div>
+  </div><div id="game">
+    <div class="game-header">
+      <div class="game-title">PIXEL SLIDER 9000</div>
+      <div class="game-stats">
+        <div class="game-stat">MOVES: <span id="moveCount">0</span></div>
+        <div class="game-stat">TIME: <span id="timer">00:00</span></div>
+      </div>
+      <div class="diff-badge" id="diffBadge">EASY</div>
+    </div>
+
+    <div class="puzzle-container">
+      <div class="board-border">
+        <div id="board"></div>
+      </div>
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-label">
+        <span>PROGRESS</span>
+        <span id="progressPct">0%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progressBar" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="ctrl-btn btn-shuffle" onclick="shuffleBoard()">⟳ SHUFFLE</button>
+      <button class="ctrl-btn btn-menu"    onclick="goMenu()">⌂ MENU</button>
+    </div>
+
+    <div class="kbd-hint">USE ARROW KEYS TO MOVE TILES</div>
+  </div><div id="win-screen">
+    <div class="win-title">✦ PUZZLE SOLVED! ✦</div>
+    <div class="win-rating" id="winRating">EXCELLENT!</div>
+
+    <div class="win-stats">
+      <div>MOVES: <span id="wMoves" style="color:var(--yellow)">0</span></div>
+      <div>TIME:  <span id="wTime"  style="color:var(--yellow)">00:00</span></div>
+      <div>SCORE: <span id="wScore" style="color:var(--cyan)">0</span></div>
+    </div>
+
+    <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:20px;">
+      <button class="ctrl-btn btn-shuffle" onclick="playAgain()" style="font-size:10px; padding:16px 24px;">
+        ▶️ PLAY AGAIN
+      </button>
+      <button class="ctrl-btn btn-menu" onclick="goMenu()" style="font-size:10px; padding:16px 24px;">
+        ⌂ MENU
+      </button>
+    </div>
+  </div><audio id="bgMusic" loop>
+    <source src="bg.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="soundBtn" class="sound-btn" onclick="toggleSound()">🔊</button>
+
+  <script src="game.js"></script>
+</body>
+</html>
