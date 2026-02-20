@@ -1,2 +1,9 @@
 # Pixel-Slider
-**PIXEL SLIDER 9000** is a retro-inspired sliding puzzle game with classic arcade vibes. Arrange numbered tiles using logic and strategy across multiple difficulty levels. With pixel-art visuals, CRT effects, keyboard and mouse controls, live stats, scoring, and explosive win animations, it’s easy to play but challenging to master.
+* 🎮 Classic sliding puzzle with strategic tile movement
+* 🧩 3×3, 4×4, 5×5 difficulty modes
+* ⌨️ Keyboard and mouse controls
+* ⏱️ Live moves, timer, progress & scoring
+* 🏆 High-score and best-time tracking
+* 🎨 Retro pixel-art & CRT effects
+* 🔊 Background music with mute
+* 🎉 Explosive win animations
